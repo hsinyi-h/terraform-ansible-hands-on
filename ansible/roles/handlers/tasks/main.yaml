@@ -1,0 +1,15 @@
+---
+- handlers:
+  - name: Starting Apache2 on Ubuntu
+    service:
+      name: apache2
+      state: started
+      enabled: yes
+    when: ansible_distribution == "Ubuntu"
+
+  - name: Starting Httpd on Amazon Linux
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+    when: ansible_distribution == "Amazon"

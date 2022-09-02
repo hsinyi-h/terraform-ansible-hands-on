@@ -1,0 +1,13 @@
+---
+- name: Install tree on Ubuntu
+  apt:
+    name: tree
+    state: present
+    update_cache: yes
+  when: ansible_distribution == "Ubuntu"
+
+- name: Install tree on Amazon Linux
+  yum:
+    name: tree
+    state: present
+  when: ansible_distribution == "Amazon"

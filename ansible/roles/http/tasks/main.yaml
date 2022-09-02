@@ -1,0 +1,17 @@
+---
+- name: Install Apache2 on Ubuntu
+  apt:
+    name: apache2
+    state: present
+    update_cache: yes
+  when: ansible_distribution == "Ubuntu"
+  notify:
+    - Starting Apache2 on Ubuntu
+
+- name: Install httpd on Amazon Linux
+  yum:
+    name: httpd
+    state: present
+  when: ansible_distribution == "Amazon"
+  notify:
+    - Starting Httpd on Amazon Linux

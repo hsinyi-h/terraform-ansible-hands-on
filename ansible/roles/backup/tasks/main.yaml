@@ -1,0 +1,14 @@
+---
+- name: copying backup script to the remote sever
+  copy:
+    src: backup.sh
+    dest: "/tmp/backup.sh"
+
+- name: configure cron job for backup
+  cron:
+    name: weekly backup
+    weekday: 5
+    minute: 0
+    hour: 12
+    user: root
+    job: "/tmp/backup.sh"

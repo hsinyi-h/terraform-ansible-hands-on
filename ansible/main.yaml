@@ -1,0 +1,14 @@
+---
+- hosts: internal01
+  roles:
+    - http
+    - tree
+    - wget
+    - backup
+    - docker
+
+- hosts: internal02
+  roles:
+    - tree
+    - wget
+    - backup
