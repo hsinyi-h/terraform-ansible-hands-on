@@ -13,7 +13,6 @@ module "vpc" {
   private_subnets = ["10.0.10.0/24"]
 
   enable_nat_gateway = true
-  enable_vpn_gateway = true
 
   tags = {
     Terraform = "true"
