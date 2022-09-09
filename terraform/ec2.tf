@@ -107,7 +107,6 @@ resource "aws_instance" "ansible" {
   ami                    = "ami-07200fa04af91f087"
   instance_type          = "t2.micro"
   key_name               = "EC2_Ubuntu"
-  monitoring             = true
   vpc_security_group_ids = [aws_security_group.ansible.id]
   subnet_id              = element(module.vpc.private_subnets, 0)
   user_data		 = file("./ansible_install.sh")
@@ -124,7 +123,6 @@ resource "aws_instance" "internal-ubuntu" {
   ami                    = "ami-07200fa04af91f087"
   instance_type          = "t2.micro"
   key_name               = "EC2_Ubuntu"
-  monitoring             = true
   vpc_security_group_ids = [aws_security_group.internal.id]
   subnet_id              = element(module.vpc.private_subnets, 0)
 
@@ -141,7 +139,6 @@ resource "aws_instance" "internal-redhat" {
   ami                    = "ami-0f36dcfcc94112ea1"
   instance_type          = "t2.micro"
   key_name               = "EC2_Ubuntu"
-  monitoring             = true
   vpc_security_group_ids = [aws_security_group.internal.id]
   subnet_id              = element(module.vpc.private_subnets, 0)
 
